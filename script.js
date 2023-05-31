@@ -5,13 +5,13 @@ var lowonganData = ["Database Developer", "System Analyst", "Front End Developer
 var posisiData = ["Jakarta", "Bandung"];
 
 // Ambil elemen dropdown Lowongan dan Posisi
-var lowonganDropdown = document.getElementById("lowongan");
+var lowonganDropdown = document.getElementById("vacancy");
 var posisiDropdown = document.getElementById("posisi");
 
 // Tambahkan pilihan dropdown Lowongan
-lowonganData.forEach(function(lowongan) {
+lowonganData.forEach(function(vacancy) {
   var option = document.createElement("option");
-  option.text = lowongan;
+  option.text = vacancy;
   lowonganDropdown.add(option);
 });
 
