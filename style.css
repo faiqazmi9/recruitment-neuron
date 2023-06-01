@@ -94,3 +94,36 @@ label {
     height: 30px;
     padding: 6%;
 }
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  thead th {
+    background-color: #1e88e5;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  tbody td {
+    padding: 10px;
+  }
+  
+  /* Responsive Tabel */
+  @media (max-width: 600px) {
+    table {
+      font-size: 12px;
+    }
+  
+    thead th {
+      font-size: 14px;
+    }
+  
+    tbody td {
+      font-size: 14px;
+    }
+  }
