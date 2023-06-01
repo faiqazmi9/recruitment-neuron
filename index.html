@@ -1,65 +1,68 @@
-<!DOCTYPE html>
+<!DOCTYPE html lang="en">
 
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Registration Form</title>
 </head>
 
 <body>
-	<div class="top-bar">
-		<img src="img/nw-horizontal.png" alt="img_logo_neu">
-	</div>
-	<form>
-		<img src="img/logomark-sign.png" alt="img_logo_neu_30">
-
-		<h4>Form Rekrutasi</h4>
-		<p>Isi data di bawah sesuai dengan identitas diri anda dan lowongan yang akan anda pilih</p>
-
-		<label for="fullname">Fullname: <span style="color:red">*</span></label>
-		<input type="text" id="fullname" name="fullname" placeholder="Masukkan Nama" required>
-
-		<label for="email">Email: <span style="color:red">*</span></label>
-		<input type="email" id="email" name="email" placeholder="Masukkan Email" required>
-
-		<label for="password">Phone Number: <span style="color:red">*</span></label>
-		<input type="number" id="phone" name="phone" placeholder="Masukkan Number" required>
-
-		<label for="password">Vacancy: <span style="color:red">*</span></label>
-		<select id="vacancy" name="vacancy" required>
-			<option value="" disabled="" selected="">
-				- Pilih Lowongan -
-			</option>
-		</select>
-		<label for="position">Position <span style="color:red">*</span></label>
-		<select class="form-control" required="" name="posisi" id="posisi">
-			<option value="" disabled="" selected="">- Pilih Posisi -</option>
-		</select>
-		<input type="submit" value="Kirim">
-		<ul class="sosmed">
-
-			<a href="https://instagram.com/neuronworks">
-				<img src="img/instagram.svg" alt="img_ig">
-			</a>
-
-			<a href="https://www.youtube.com/@NeuronworksIndonesia">
-				<img src="img/youtube.svg" alt="img_yt">
-			</a>
-
-			<a href="https://twitter.com/neuronworks">
-				<img src="img/twitter.svg" alt="img_tw">
-			</a>
-
-			<a href="https://www.facebook.com/neuronworks/">
-				<img src="img/square-facebook.svg" alt="img_fb">
-			</a>
-
-		</ul>
-		<p href="https://www.neuronworks.co.id" style="text-align: center;">
-			www.neuronworks.co.id
-		</p>
-	</form>
-
-	<script src="script.js"></script>
+  <div class="top-bar">
+    <img src="img/nw-horizontal.png" alt="img_logo_neu">
+  </div>
+  <form id="recruitment-form">
+    <img src="img/logomark-sign.png" alt="img_logo_neu_30">
+    <h4>Form Rekrutasi</h4>
+    <p>Isi data di bawah sesuai dengan identitas diri anda dan lowongan yang akan anda pilih</p>
+    <label for="fullname">Fullname: <span style="color:red">*</span></label>
+    <input type="text" id="fullname" name="fullname" placeholder="Masukkan Nama" required>
+    <label for="email">Email: <span style="color:red">*</span></label>
+    <input type="email" id="email" name="email" placeholder="Masukkan Email" required>
+    <label for="password">Phone Number: <span style="color:red">*</span></label>
+    <input type="number" id="phone" name="phone" placeholder="Masukkan Number" required>
+    <label for="password">Vacancy: <span style="color:red">*</span></label>
+    <select id="vacancy" name="vacancy" required>
+      <option value="" disabled="" selected="">
+        - Pilih Lowongan -
+      </option>
+    </select>
+    <label for="position">Position <span style="color:red">*</span></label>
+    <select id="posisi" name="posisi" required>
+      <option value="" disabled="" selected="">
+        - Pilih Posisi -
+      </option>
+    </select>
+    <input type="submit" value="Kirim">
+    <ul class="sosmed">
+      <a href="https://instagram.com/neuronworks">
+        <img src="img/instagram.svg" alt="img_ig">
+      </a>
+      <a href="https://www.youtube.com/@NeuronworksIndonesia">
+        <img src="img/youtube.svg" alt="img_yt">
+      </a>
+      <a href="https://twitter.com/neuronworks">
+        <img src="img/twitter.svg" alt="img_tw">
+      </a>
+      <a href="https://www.facebook.com/neuronworks/">
+        <img src="img/square-facebook.svg" alt="img_fb">
+      </a>
+    </ul>
+    <p href="https://www.neuronworks.co.id" style="text-align: center;">
+      www.neuronworks.co.id
+    </p>
+  </form>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>Nomor Telepon</th>
+        <th>Lowongan Pekerjaan</th>
+        <th>Posisi yang Dilamar</th>
+      </tr>
+    </thead>
+    <tbody id="dataBody"></tbody>
+  </table>
+  <script src="script.js"></script>
 </body>
 
 </html>
