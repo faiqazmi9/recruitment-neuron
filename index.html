@@ -1,153 +1,68 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html lang="en">
+
 <head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Registration Form</title>
-	<style>
-		body {
-			background-image: url('img/Starlid-illustration.svg');
-			background-size: auto;
-            background-repeat: no-repeat;
-			margin: 0;
-			padding: 0;
-			font-family: Arial, sans-serif;
-		}
-		.top-bar {
-			background-color: #ffffff;
-			color: #fff;
-			padding: 14px;
-			box-shadow: 0px 4px 8px rgb(0 0 0/15%)
-		}
-        .top-bar img {
-            max-width: 150px;
-            height: 30px;
-			margin-left: 20px;
-        }
-		form {
-			max-width: 475px;
-			margin: 3%;
-			margin-right: 10%;
-			padding: 20px;
-			border: 1px solid #ddd;
-			border-radius: 5px;
-			background-color: #f9f9f9;
-			float: right;
-			font-size: 12px;
-			box-shadow: 0px 4px 8px rgb(0 0 0/15%)
-		}
-		h4{
-			font-size: 25px;
-			margin-bottom: 0px;
-		}
-         form img{
-            max-width: 120px;
-            height: auto;
-			margin-top: 10px;
-			margin-bottom: -10px;
-        }
-		input[type=text], input[type=email], input[type=number] {
-			width: 100%;
-			padding: 12px 20px;
-			margin: 10px 0;
-			display: block;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			box-sizing: border-box;
-		}
-        select {
-            width: 100%;
-			padding: 12px 20px;
-			margin: 8px 0;
-			display: inline-block;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			box-sizing: border-box;
-        }
-		input[type=submit] {
-			background-color: #1e88e5;
-			color: white;
-			padding: 5px 10px;
-			margin: 8px 0;
-			width: 100%;
-			cursor: pointer;
-			border-color: #1e88e5;
-		}
-		
-		label {
-			display: block;
-			font-weight: normal;
-			margin-left: 1px;
-		}
-		.sosmed{
-			flex-flow: row wrap;
-			align-items: center;
-			margin-left: 10%;
-			margin-right: 10%;
-		}
-		.sosmed img{
-            height: 30px;
-			padding: 6%;
-		}
-	</style>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Registration Form</title>
 </head>
+
 <body>
-	<div class="top-bar">
-        <img src="img/nw-horizontal.png">
-	</div>
-	<form>
-        <img src="img/logomark-sign.png">
-
-		<h4>Form Rekrutasi</h4>
-        <p>Isi data di bawah sesuai dengan identitas diri anda dan lowongan yang akan anda pilih</p>
-		
-		<label for="fullname">Fullname: <span style="color:red">*</span></label>
-		<input type="text" id="fullname" name="fullname" placeholder="Masukkan Nama" required>
-
-		<label for="email">Email: <span style="color:red">*</span></label>
-		<input type="email" id="email" name="email" placeholder="Masukkan Email" required>
-
-		<label for="password">Phone Number: <span style="color:red">*</span></label>
-		<input type="number" id="phone" name="phone" placeholder="Masukkan Number" required>
-
-        <label for="password">Vacancy: <span style="color:red">*</span></label>
-		<select  id="vacancy" name="vacancy" required>
-            <option disables selected value>
-                - Pilih Lowongan -
-            </option>   
-            <option>
-                Database Developer
-            </option>
-        </select>    
-		<label for="position">Position <span style="color:red">*</span></label>
-		<select class="form-control" required="" name="posisi" id="posisi">
-					<option value="" disabled="" selected="">- Pilih Posisi -</option>
-					<option value="#example1">Contoh Posisi #1</option>
-					<option value="#example2">Contoh Posisi #2</option>
-					<option value="#example3">Contoh Posisi #3</option>
-		 </select>           		
-		<input type="submit" value="Kirim">
-			<ul class="sosmed">
-
-					<a href="https://instagram.com/neuronworks">
-						<img src="img/instagram.svg">
-					</a>                        
-
-					<a href="https://www.youtube.com/@NeuronworksIndonesia">
-						<img src="img/youtube.svg">
-					</a>
-
-					<a href="https://twitter.com/neuronworks">
-						<img src="img/twitter.svg">
-					</a>
-
-					<a href="https://www.facebook.com/neuronworks/">
-						<img src="img/square-facebook.svg">
-					</a>
-				
-			</ul>
-			<p href="https://www.neuronworks.co.id" style="text-align: center;">
-				www.neuronworks.co.id
-			</p>
-	</form>
+  <div class="top-bar">
+    <img src="img/nw-horizontal.png" alt="img_logo_neu">
+  </div>
+  <form id="recruitment-form">
+    <img src="img/logomark-sign.png" alt="img_logo_neu_30">
+    <h4>Form Rekrutasi</h4>
+    <p>Isi data di bawah sesuai dengan identitas diri anda dan lowongan yang akan anda pilih</p>
+    <label for="fullname">Fullname: <span style="color:red">*</span></label>
+    <input type="text" id="fullname" name="fullname" placeholder="Masukkan Nama" required>
+    <label for="email">Email: <span style="color:red">*</span></label>
+    <input type="email" id="email" name="email" placeholder="Masukkan Email" required>
+    <label for="password">Phone Number: <span style="color:red">*</span></label>
+    <input type="number" id="phone" name="phone" placeholder="Masukkan Number" required>
+    <label for="password">Vacancy: <span style="color:red">*</span></label>
+    <select id="vacancy" name="vacancy" required>
+      <option value="" disabled="" selected="">
+        - Pilih Lowongan -
+      </option>
+    </select>
+    <label for="position">Position <span style="color:red">*</span></label>
+    <select id="posisi" name="posisi" required>
+      <option value="" disabled="" selected="">
+        - Pilih Posisi -
+      </option>
+    </select>
+    <input type="submit" value="Kirim">
+    <ul class="sosmed">
+      <a href="https://instagram.com/neuronworks">
+        <img src="img/instagram.svg" alt="img_ig">
+      </a>
+      <a href="https://www.youtube.com/@NeuronworksIndonesia">
+        <img src="img/youtube.svg" alt="img_yt">
+      </a>
+      <a href="https://twitter.com/neuronworks">
+        <img src="img/twitter.svg" alt="img_tw">
+      </a>
+      <a href="https://www.facebook.com/neuronworks/">
+        <img src="img/square-facebook.svg" alt="img_fb">
+      </a>
+    </ul>
+    <p href="https://www.neuronworks.co.id" style="text-align: center;">
+      www.neuronworks.co.id
+    </p>
+  </form>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>Nomor Telepon</th>
+        <th>Lowongan Pekerjaan</th>
+        <th>Posisi yang Dilamar</th>
+      </tr>
+    </thead>
+    <tbody id="dataBody"></tbody>
+  </table>
+  <script src="script.js"></script>
 </body>
+
 </html>

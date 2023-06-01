@@ -1,0 +1,129 @@
+body {
+    background-image: url('img/Starlid-illustration.svg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.top-bar {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 14px;
+    box-shadow: 0px 4px 8px rgb(0 0 0/15%)
+}
+
+.top-bar img {
+    max-width: 150px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+form {
+    max-width: 475px;
+    margin: 3%;
+    margin-right: 10%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    float: right;
+    font-size: 12px;
+    box-shadow: 0px 4px 8px rgb(0 0 0/15%)
+}
+
+h4 {
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+form img {
+    max-width: 120px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+input[type=text],
+input[type=email],
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: #1e88e5;
+    color: white;
+    padding: 5px 10px;
+    margin: 8px 0;
+    width: 100%;
+    cursor: pointer;
+    border-color: #1e88e5;
+}
+
+label {
+    display: block;
+    font-weight: normal;
+    margin-left: 1px;
+}
+
+.sosmed {
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.sosmed img {
+    height: 30px;
+    padding: 6%;
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  thead th {
+    background-color: #1e88e5;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  tbody td {
+    padding: 10px;
+  }
+  
+  /* Responsive Tabel */
+  @media (max-width: 600px) {
+    table {
+      font-size: 12px;
+    }
+  
+    thead th {
+      font-size: 14px;
+    }
+  
+    tbody td {
+      font-size: 14px;
+    }
+  }
