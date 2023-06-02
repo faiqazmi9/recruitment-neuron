@@ -39,33 +39,46 @@ form.addEventListener("submit", function (event) {
     if (nama === "" || email === "" || phone === "" || vacancy === "" || posisi === "") {
         alert("Harap isi semua kolom!");
         return;
+    } else {
+
+        var successMessage = document.createElement("p");
+        successMessage.className = "success";
+        successMessage.textContent = "Lamaran Anda telah terkirim!, Semoga beruntung mendapat panggilan";
+        document.body.appendChild(successMessage);
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Lamaran Terkirim!',
+            showConfirmButton: false,
+            timer: 2000 // Notifikasi akan hilang setelah 2 detik
+        });
+
+        // Membuat elemen <tr> dan <td> untuk setiap kolom data
+        const newRow = document.createElement("tr");
+        const namaCell = document.createElement("td");
+        const emailCell = document.createElement("td");
+        const phoneCell = document.createElement("td");
+        const vacancyCell = document.createElement("td");
+        const posisiCell = document.createElement("td");
+
+        // Mengisi teks pada setiap elemen <td> dengan nilai yang diisi pengguna
+        namaCell.textContent = nama;
+        emailCell.textContent = email;
+        phoneCell.textContent = phone;
+        vacancyCell.textContent = vacancy;
+        posisiCell.textContent = posisi;
+
+        // Menambahkan elemen <td> ke dalam elemen <tr>
+        newRow.appendChild(namaCell);
+        newRow.appendChild(emailCell);
+        newRow.appendChild(phoneCell);
+        newRow.appendChild(vacancyCell);
+        newRow.appendChild(posisiCell);
+
+        // Menambahkan elemen <tr> ke dalam elemen <tbody>
+        dataBody.appendChild(newRow);
+
+        // Mereset form setelah berhasil ditambahkan ke dalam tabel
+        form.reset();
     }
-
-    // Membuat elemen <tr> dan <td> untuk setiap kolom data
-    const newRow = document.createElement("tr");
-    const namaCell = document.createElement("td");
-    const emailCell = document.createElement("td");
-    const phoneCell = document.createElement("td");
-    const vacancyCell = document.createElement("td");
-    const posisiCell = document.createElement("td");
-
-    // Mengisi teks pada setiap elemen <td> dengan nilai yang diisi pengguna
-    namaCell.textContent = nama;
-    emailCell.textContent = email;
-    phoneCell.textContent = phone;
-    vacancyCell.textContent = vacancy;
-    posisiCell.textContent = posisi;
-
-    // Menambahkan elemen <td> ke dalam elemen <tr>
-    newRow.appendChild(namaCell);
-    newRow.appendChild(emailCell);
-    newRow.appendChild(phoneCell);
-    newRow.appendChild(vacancyCell);
-    newRow.appendChild(posisiCell);
-
-    // Menambahkan elemen <tr> ke dalam elemen <tbody>
-    dataBody.appendChild(newRow);
-
-    // Mereset form setelah berhasil ditambahkan ke dalam tabel
-    form.reset();
 });
