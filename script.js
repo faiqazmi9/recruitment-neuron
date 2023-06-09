@@ -41,11 +41,14 @@ var kuotaVacancy = {
         kuota: 2,
         terisi: 0
     },
-    "Technical Writer": {
+    "Technical Writter": {
         kuota: 3,
         terisi: 0
     }
 };
+
+var vacancySelect = document.getElementById("vacancy");
+var msgVcncy = document.getElementById("msgVcncy");
 
 // Mendapatkan informasi kuota lowongan
 function getLowonganInfo(vacancy) {
@@ -66,6 +69,28 @@ function getLowonganInfo(vacancy) {
     }
 }
 
+// Menambahkan event listener saat opsi pilihan lowongan dipilih
+vacancySelect.addEventListener("change", function () {
+    var selectedVacancy = vacancySelect.value; // Mendapatkan lowongan yang dipilih
+    msgVcncy.innerHTML = "";
+
+    // Memeriksa kuota lowongan yang dipilih
+    if (isValidVacancy(selectedVacancy)) {
+        var lowonganInfo = getLowonganInfo(selectedVacancy);
+        msgVcncy.innerHTML = lowonganInfo;
+        if (lowonganInfo.includes('Kuota tersisa')) {
+            msgVcncy.className = "notification yellow";
+          } else if (lowonganInfo.includes('Anda dapat memilih')) {
+            msgVcncy.className = "notification green";
+          } else if (lowonganInfo.includes('Mohon maaf') || lowonganInfo.includes('Lowongan tidak tersedia')) {
+            msgVcncy.className = "notification red";
+          }
+          msgVcncy.style.display = "block";
+    } else {
+        msgVcncy.innerHTML = "Lowongan tidak tersedia";
+    }
+});
+
 // Menangani event saat form dikirim
 const form = document.getElementById("recruitment-form");
 const dataBody = document.getElementById("dataBody");
@@ -73,7 +98,6 @@ form.addEventListener("submit", function (event) {
     event.preventDefault(); // Mencegah form dikirim secara langsung
 
     successMessage.innerHTML = "";
-    alertMessage.innerHTML = "";
 
     // Mengambil nilai input
     const nama = document.getElementById("fullname").value;
@@ -107,15 +131,6 @@ form.addEventListener("submit", function (event) {
             showConfirmButton: false,
             timer: 2000 // Notifikasi akan hilang setelah 2 detik
         });
-    } else if (!isValidVacancy(vacancy)) {
-        // Tampilkan notifikasi terkait kuota lowongan
-        var lowonganInfo = getLowonganInfo(vacancy);
-        Swal.fire({
-            icon: 'info',
-            title: lowonganInfo,
-            showConfirmButton: false,
-            timer: 2000 // Notifikasi akan hilang setelah 2 detik
-        });
     } else {
 
         var emailExists = inputData.some(function (item) {
@@ -134,13 +149,8 @@ form.addEventListener("submit", function (event) {
 
             successMessage.innerHTML = "Terima kasih telah melakukan pengisian, permintaan anda akan kami segera proses!";
             document.body.appendChild(successMessage);
-            
-            kuotaVacancy[vacancy].terisi++;
 
-            // Tampilkan notifikasi vacancy menggunakan elemen <p>
-            var lowonganInfo = getLowonganInfo(vacancy);
-            alertMessage.innerHTML = lowonganInfo;
-            document.body.appendChild(alertMessage);
+            kuotaVacancy[vacancy].terisi++;
 
             inputData.push({ name: nama, email: email, phone: phone, vacancy: vacancy, posisi: posisi });
 
@@ -178,6 +188,7 @@ form.addEventListener("submit", function (event) {
             });
 
             // Mereset form setelah berhasil ditambahkan ke dalam tabel
+            msgVcncy.innerHTML = "";
             form.reset();
         }
     }
@@ -201,12 +212,6 @@ function isValidVacancy(vacancy) {
         if (kuotaVacancy[vacancy].terisi < kuotaVacancy[vacancy].kuota) {
             return true;
         } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Mohon maaf, rekrutasi untuk ' + vacancy + ' sudah penuh dan tidak dapat dipilih.',
-                showConfirmButton: false,
-                timer: 2000 // Notifikasi akan hilang setelah 2 detik
-            });
             return false;
         }
     } else {
